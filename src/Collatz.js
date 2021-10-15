@@ -1,13 +1,17 @@
 import React from 'react';
-
-const anotherLoop = () => {
-
-}
+import './App.css';
 
 const Collatz = (props) => {
-    let x = props.x;
+    let input = props.x;
+    let x = parseInt(input);
     let jumps = 0;
     let xArray = [];
+
+    if(x <= 0 || isNaN(x)){
+        x = 1;
+        input = 1;
+    }
+    
     do{
         if(x%2===0)
         {
@@ -33,12 +37,12 @@ const Collatz = (props) => {
     } while (x!==1);
 
     return(
-        <div>
+        <div class="collatz">
         <p>
-            x = {props.x}
+            x = {input}
         </p>
         <p>
-            steps = {xArray.sort((a,b) => {return a-b}).join()}
+            steps = {xArray.join(', ')}
         </p>
         <p>
             jumps = {jumps}

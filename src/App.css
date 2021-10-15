@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.collatz {
+  word-break: break-all;
+}
