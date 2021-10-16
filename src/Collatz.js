@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+import {Line} from "react-chartjs-2";
 
 const Collatz = (props) => {
     let input = props.x;
     let x = parseInt(input);
     let jumps = 0;
     let xArray = [];
+    let stepsArray = [];
 
     if(x <= 0 || isNaN(x)){
         x = 1;
@@ -17,17 +19,20 @@ const Collatz = (props) => {
         {
             x/=2;
 
+            jumps++;
+            stepsArray.push(jumps);
             xArray.push(x);
 
+            
             console.log("GERADE: ");
             console.log(x);
-            jumps++;
+
         } else if (x%2!==0)
         {
             x = 3*x+1;
 
             jumps++;
-
+            stepsArray.push(jumps);
             xArray.push(x);
 
             console.log("UNGERADE: ");
@@ -47,6 +52,20 @@ const Collatz = (props) => {
         <p>
             jumps = {jumps}
         </p>
+        
+        {stepsArray? <Line 
+            data={{
+                labels: stepsArray,
+                datasets: [{
+                    data: xArray,
+                }]
+            }}
+            height={720}
+            width={1440}
+            options={{
+                maintainAspectRatio: true,
+            }}
+        /> : null}
         </div>
     );
 }
