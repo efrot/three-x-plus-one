@@ -6,14 +6,14 @@ const Collatz = (props) => {
     let input = props.x;
     let x = parseInt(input);
     let jumps = 0;
-    let xArray = [x];
-    let stepsArray = [0];
 
     if(x <= 0 || isNaN(x)){
         x = 1;
-        input = 1;
     }
     
+    let xArray = [x];
+    let stepsArray = [0];
+
     do{
         if(x%2===0)
         {
