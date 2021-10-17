@@ -6,8 +6,8 @@ const Collatz = (props) => {
     let input = props.x;
     let x = parseInt(input);
     let jumps = 0;
-    let xArray = [];
-    let stepsArray = [];
+    let xArray = [x];
+    let stepsArray = [0];
 
     if(x <= 0 || isNaN(x)){
         x = 1;
@@ -42,30 +42,39 @@ const Collatz = (props) => {
     } while (x!==1);
 
     return(
-        <div class="collatz">
-        <p>
-            x = {input}
-        </p>
-        <p>
-            steps = {xArray.join(', ')}
-        </p>
-        <p>
-            jumps = {jumps}
-        </p>
-        
-        {stepsArray? <Line 
-            data={{
-                labels: stepsArray,
-                datasets: [{
-                    data: xArray,
-                }]
-            }}
-            height={720}
-            width={1440}
-            options={{
-                maintainAspectRatio: true,
-            }}
-        /> : null}
+        <div>
+            <div>
+                {stepsArray? 
+                <Line 
+                    data={{
+                        labels: stepsArray,
+                        datasets: [{
+                            label: "x",
+                            data: xArray,
+                            backgroundColor: '#A10300',
+                            borderColor: 'rgba(199, 71, 69, 0.6)',
+                            borderWidth: 2,
+                            radius: 4,
+                        }]
+                    }}
+                    width={700}
+                    height={400}
+                    options={{
+                        maintainAspectRatio: false,
+                    }}
+                /> : null}
+            </div>
+            <div class="collatz">
+                {/*<p>
+                    x = {input}
+                </p>
+                <p>
+                    steps = {xArray.join(', ')}
+                </p>
+                <p>
+                    jumps = {jumps}
+                </p>*/}
+            </div>
         </div>
     );
 }
