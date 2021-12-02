@@ -1,3 +1,20 @@
+# About
+
+Three x plus one displays a graph of the collatz conjecture. 
+
+You can see a sample of the projekt here: 
+https://musing-boyd-51f5bc.netlify.app
+
+It works by starting with any number x >= 1. 
+If the number is even, you devide it by 2.
+If the number is odd, you multiply it by 3 and add 1.
+
+The x-Axis shows the amount of steps to get to the number 1.
+The y-Axis displays the number n.
+
+The interesting part about this is that any number will end up in a 4 2 1 loop.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
