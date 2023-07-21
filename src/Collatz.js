@@ -43,7 +43,6 @@ const Collatz = (props) => {
 
     return(
         <div>
-            <div>
                 {stepsArray? 
                 <Line 
                     data={{
@@ -63,18 +62,6 @@ const Collatz = (props) => {
                         maintainAspectRatio: false,
                     }}
                 /> : null}
-            </div>
-            <div class="collatz">
-                {/*<p>
-                    x = {input}
-                </p>
-                <p>
-                    steps = {xArray.join(', ')}
-                </p>
-                <p>
-                    jumps = {jumps}
-                </p>*/}
-            </div>
         </div>
     );
 }

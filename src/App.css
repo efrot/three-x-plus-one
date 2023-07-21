@@ -1,9 +1,9 @@
 .App {
-  background-color: #F5F7D6;
   text-align: center;
 }
 
 .grid{
+  background-color: #F5F7D6;
   background-size: 16px 16px;
   background-image:
     linear-gradient(to right, rgba(128, 128, 128, 0.171) 1px, transparent 0.1px),
