@@ -2,17 +2,17 @@
 
 Three x plus one displays a graph of the collatz conjecture. 
 
-You can see a sample of the projekt here: 
-https://musing-boyd-51f5bc.netlify.app
+The Collatz Conjecture, also known as the 3x + 1 conjecture or the hailstone sequence, is a famous unsolved problem in mathematics. 
+It was first proposed by German mathematician Lothar Collatz in 1937.
 
-It works by starting with any number x >= 1. 
-If the number is even, you devide it by 2.
-If the number is odd, you multiply it by 3 and add 1.
+The conjecture is quite simple to understand but has proven to be incredibly elusive to prove or disprove. It is defined as follows:
+
+Start with any positive integer x. If x is even, divide it by 2 to get x/2. If x is odd, multiply it by 3 and add 1 to get 3x + 1. Now take the result and repeat the process, generating a sequence of numbers. The conjecture posits that no matter which positive integer you start with, this sequence will always eventually reach the number 1.
+
+The Collatz Conjecture suggests that if you keep applying the process to the resulting numbers in the sequence, you will eventually reach the cycle: 1 -> 4 -> 2 -> 1, and the sequence will continue to loop through this cycle indefinitely. However, despite extensive testing and analysis, a formal proof of the conjecture for all positive integers x remains an open problem in mathematics.
 
 The x-Axis shows the amount of steps to get to the number 1.
-The y-Axis displays the number n.
-
-The interesting part about this is that any number will end up in a 4 2 1 loop.
+The y-Axis displays the number x.
 
 
 # Getting Started with Create React App
