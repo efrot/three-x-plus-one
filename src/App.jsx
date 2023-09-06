@@ -1,13 +1,15 @@
 import './App.css';
 import Collatz from './Collatz/Collatz';
+import Header from './Header/Header';
 
 
 const App = () => {
 
 
   return (
-    <>   
-     <Collatz />
+    <>
+      <Header />   
+      <Collatz />
     </>
 
   )

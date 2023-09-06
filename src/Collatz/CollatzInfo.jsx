@@ -1,5 +1,3 @@
-// import {useState} from 'react';
-
 const CollatzInfo = (props) => {
     let steps = props.steps;
 
