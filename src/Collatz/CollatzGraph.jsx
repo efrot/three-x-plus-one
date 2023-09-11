@@ -68,6 +68,7 @@ const CollatzGraph = (props) => {
 
     return(
         <div className="collatz-graph-container">
+            <h2>Collatz-Chart</h2>
                 <Line 
                     data={{
                         labels: totalSteps,
