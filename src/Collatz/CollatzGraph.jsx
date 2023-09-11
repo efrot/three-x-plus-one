@@ -74,10 +74,10 @@ const CollatzGraph = (props) => {
                         datasets: [{
                             label: "x",
                             data: xValues,
-                            backgroundColor: '#A10300',
-                            borderColor: 'rgba(199, 71, 69, 0.6)',
+                            backgroundColor: '#006d77 ',
+                            borderColor: '#006d77 ',
                             borderWidth: 2,
-                            radius: 3,
+                            radius: 6,
                         }]
                     }}
                     options={{

@@ -5,6 +5,7 @@ const CollatzInfo = (props) => {
 
     return (
         <div className="collatz-info-container">
+            <h2>Calculation</h2>
             <p>Steps: {steps}</p>
         </div>
     )
