@@ -12,17 +12,16 @@ const Collatz = () => {
 
 
     return(
-        <Grid container spacing={2}>
-            <Grid item xs={6}>
-                <CollatzGraph x={x} setSteps={setSteps}/>
+        <div className='collatz-container'>
+            <Grid container spacing={3}>
+                <Grid item xs={7}>
+                    <CollatzGraph x={x} setX={setX} setSteps={setSteps}/>
+                </Grid>
+                <Grid item xs={5}>
+                    <CollatzInfo steps={steps}/>
+                </Grid>
             </Grid>
-            <Grid item xs={6}>
-                <CollatzInput setX={setX}/>
-            </Grid>
-            <Grid item xs={8}>
-                <CollatzInfo steps={steps}/>
-            </Grid>
-        </Grid>
+        </div>
     );
 }
 

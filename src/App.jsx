@@ -7,10 +7,10 @@ const App = () => {
 
 
   return (
-    <>
+    <div className='app'>
       <Header />   
       <Collatz />
-    </>
+    </div>
 
   )
 }

@@ -1,12 +1,13 @@
-import { Button } from "@mui/material";
+import { Text } from "@mui/material";
+import './Header.css';
 
 const Header = () => {
 
     return(
-        <div>
+        <div className="header-container">
             <h1>3 x + 1</h1>
-            <Button>Home</Button>
-            <Button>About</Button>
+            <button>Home</button>
+            <button>About</button>
         </div>
     )
 

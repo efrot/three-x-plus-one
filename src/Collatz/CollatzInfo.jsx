@@ -1,8 +1,10 @@
+import './Collatz.css';
+
 const CollatzInfo = (props) => {
     let steps = props.steps;
 
     return (
-        <div>
+        <div className="collatz-info-container">
             <p>Steps: {steps}</p>
         </div>
     )

@@ -9,6 +9,8 @@ import {
     Legend,
   } from 'chart.js';
 import {Line} from "react-chartjs-2";
+import CollatzInput from './CollatzInput';
+import './Collatz.css';
 
 ChartJS.register(
     CategoryScale,
@@ -23,6 +25,8 @@ ChartJS.register(
 const CollatzGraph = (props) => {
     let input = props.x;
     let setSteps = props.setSteps;
+    let setX = props.setX;
+
     let x = parseInt(input);
     let jumps = 0;
 
@@ -63,30 +67,29 @@ const CollatzGraph = (props) => {
     } while (x!==1);
 
     return(
-        <div className="graph">
-            <Line 
-                data={{
-                    labels: totalSteps,
-                    datasets: [{
-                        label: "x",
-                        data: xValues,
-                        backgroundColor: '#A10300',
-                        borderColor: 'rgba(199, 71, 69, 0.6)',
-                        borderWidth: 2,
-                        radius: 4,
-                    }]
-                }}
-                width={600}
-                height={300}
-                options={{
-                    plugins:{
-                        legend:{
-                            display: false,
-                        }
-                    },
-                    maintainAspectRatio: false,
-                }}
-            />
+        <div className="collatz-graph-container">
+                <Line 
+                    data={{
+                        labels: totalSteps,
+                        datasets: [{
+                            label: "x",
+                            data: xValues,
+                            backgroundColor: '#A10300',
+                            borderColor: 'rgba(199, 71, 69, 0.6)',
+                            borderWidth: 2,
+                            radius: 3,
+                        }]
+                    }}
+                    options={{
+                        plugins:{
+                            legend:{
+                                display: false,
+                            }
+                        },
+                        // maintainAspectRatio: true,
+                    }}
+                />
+                <CollatzInput setX={setX}/>
         </div>
     );
 }
