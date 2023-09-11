@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import CollatzGraph from './CollatzGraph';
-import CollatzInput from './CollatzInput';
 import CollatzInfo from './CollatzInfo';
 import './Collatz.css';
 import { Grid } from '@mui/material';
