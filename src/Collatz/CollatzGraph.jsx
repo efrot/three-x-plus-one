@@ -11,6 +11,7 @@ import {
 import {Line} from "react-chartjs-2";
 import CollatzInput from './CollatzInput';
 import './Collatz.css';
+import { useEffect } from 'react';
 
 ChartJS.register(
     CategoryScale,
@@ -23,19 +24,32 @@ ChartJS.register(
 )
 
 const CollatzGraph = (props) => {
+
     let input = props.x;
     let setSteps = props.setSteps;
     let setX = props.setX;
+    let setXValues = props.setXValues;
 
     let x = parseInt(input);
     let jumps = 0;
 
     if(x <= 0 || isNaN(x)){
-        x = 1;
+        x = parseInt(1);
+        setX(x);
     }
-    
+
     let xValues = [x];
     let totalSteps = [0];
+    
+    useEffect(() => {
+        if(props.xValues.length !== xValues.length) {
+            setXValues(xValues);
+        }
+    },[xValues]);
+
+    useEffect(() => {
+        setSteps(jumps);
+    },[jumps]);
 
     do{
         if(x%2===0)
@@ -43,7 +57,6 @@ const CollatzGraph = (props) => {
             x/=2;
 
             jumps++;
-            setSteps(jumps);
             totalSteps.push(jumps);
             xValues.push(x);
 
@@ -56,7 +69,6 @@ const CollatzGraph = (props) => {
             x = 3*x+1;
 
             jumps++;
-            setSteps(jumps);
             totalSteps.push(jumps);
             xValues.push(x);
 
